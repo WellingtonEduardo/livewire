@@ -6,6 +6,7 @@ use App\Models\Post;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class PostEdit extends Component
 {
@@ -43,6 +44,7 @@ class PostEdit extends Component
             'title' => $this->title,
             'content' => $this->content,
             'photo' => $this->photo ? $this->photo->store('photos', 'public') : $this->post->photo,
+            'slug' => Str::slug($this->title)
         ]);
 
         $this->js(<<<JS

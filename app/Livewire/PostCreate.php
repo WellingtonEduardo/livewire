@@ -6,7 +6,6 @@ use App\Livewire\Forms\PostForm;
 use App\Models\Post;
 use Livewire\Component;
 use Illuminate\Support\Str;
-use Livewire\Attributes\Rule;
 
 class PostCreate extends Component
 {
