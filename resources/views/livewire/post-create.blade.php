@@ -1,18 +1,23 @@
-<div class="text-black">
+<div class="flex flex-col items-center text-black">
+    <h1 class="mt-5 text-3xl font-bold text-white">
+        Criar um post
+    </h1>
 
-    <form class="m-auto mt-16 flex w-[500px] flex-col items-center gap-10" action="#" wire:submit.prevent='create'>
+
+    <form class="m-auto mt-16 flex w-[500px] flex-col items-center gap-10" action="#" wire:submit='create'>
 
         @if (session()->has('success'))
             <span class="text-green-500">{{ session()->get('success') }}</span>
         @endif
 
-        <input type="text" class="w-4/5 rounded-lg px-2 py-1" wire:model="title">
-        @error('title')
+        <input type="text" class="w-4/5 rounded-lg px-2 py-1" wire:model.live.blur="form.title">
+
+        @error('form.title')
             <span class="text-red-500">{{ $message }}</span>
         @enderror
 
-        <textarea class="w-4/5 rounded-lg px-2 py-1" rows="10" wire:model="content"></textarea>
-        @error('content')
+        <textarea class="w-4/5 rounded-lg px-2 py-1" rows="10" wire:model.live.blur="form.content"></textarea>
+        @error('form.content')
             <span class="text-red-500">{{ $message }}</span>
         @enderror
 
