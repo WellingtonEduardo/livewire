@@ -22,10 +22,10 @@ class PostCreate extends Component
         $this->validate();
 
         Post::create([
-         'title' => $this->title,
-         'content' => $this->content,
+         'title' => $this->form->title,
+         'content' => $this->form->content,
          'user_id' => 1,
-         'slug' => Str::slug($this->title)
+         'slug' => Str::slug($this->form->title)
         ]);
         $this->form->title = '';
         $this->form->content = '';

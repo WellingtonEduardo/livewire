@@ -22,7 +22,7 @@
         @enderror
 
         <div class="flex items-center justify-center gap-5">
-            <button class="w-[150px] rounded-lg bg-red-800 px-2 py-2 font-bold">
+            <button class="w-[150px] rounded-lg border border-blue-400 bg-blue-600 px-2 py-2 font-bold">
                 Criar
             </button>
 
