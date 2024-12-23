@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class PostCreateController extends Controller
 {
+    public function index(): View
+    {
+        return view('home');
+
+    }
     public function create(): View
     {
         return view('post-create');
